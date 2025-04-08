@@ -9,7 +9,7 @@
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "lint": "next lint",
-    "jest": "jest"
+    "test": "jest"
   },
   "dependencies": {
     "@mantine/core": "^7.17.4",
