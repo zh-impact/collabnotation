@@ -7,7 +7,6 @@ import { annotationCanvasAtom } from "@/atoms";
 import { EditorControls } from "@/components/EditorControls";
 import { EditorTools } from "@/components/EditorTools";
 import { StartEntry } from "@/components/StartEntry";
-// import { Canvas } from "@/components/Notation/canvas";
 
 const Canvas = dynamic(
   () => import("@/components/Notation/canvas").then((mod) => mod.Canvas),
@@ -21,19 +20,17 @@ export default function Home() {
 
   return (
     <div className="h-screen">
-      <div className="grid grid-cols-[4rem_1fr] grid-rows-[5rem_1fr] h-full">
-        <div className="topbar col-span-2 flex gap-4 items-center bg-slate-300">
-          <i className="text-2xl text-purple-500 font-bold pl-4">
-            Collabnotation
-          </i>
+      <div className="grid grid-cols-[4rem_1fr] grid-rows-[3rem_1fr] h-full">
+        <div className="topbar col-span-2 flex gap-4 items-center bg-white">
+          <i className="text-2xl text-sky-400 font-bold pl-4">CollabNotation</i>
           <EditorControls />
         </div>
 
-        <div className="sidebar bg-slate-100 py-4">
+        <div className="sidebar bg-sidebar py-4">
           <EditorTools />
         </div>
 
-        <div className="content flex-grow bg-slate-200">
+        <div className="content flex-grow bg-header">
           {annotationCanvas.initialized ? (
             <div className="h-full flex items-center justify-center">
               <div
