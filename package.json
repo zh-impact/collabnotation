@@ -14,9 +14,13 @@
   "dependencies": {
     "@mantine/core": "^7.17.4",
     "@mantine/hooks": "^7.17.4",
+    "@tabler/icons-react": "^3.31.0",
+    "jotai": "^2.12.2",
+    "konva": "^9.3.20",
     "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-konva": "^19.0.3",
     "remult": "^2.7.33"
   },
   "devDependencies": {

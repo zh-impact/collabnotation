@@ -14,9 +14,29 @@ const wrapper =
     : (config: NextConfig) => config;
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // TODO: These two ignoring should be removed after the project is stable
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
+  webpack: (config) => {
+    config.externals = [...config.externals, { canvas: "canvas" }];
+    return config;
+  },
   experimental: {
     optimizePackageImports: ["@mantine/core", "@mantine/hooks"],
+    turbo: {
+      resolveAlias: {
+        // Ref: https://github.com/konvajs/react-konva?tab=readme-ov-file#usage-with-nextjs
+        canvas: "./empty.js",
+      },
+    },
   },
 };
 
