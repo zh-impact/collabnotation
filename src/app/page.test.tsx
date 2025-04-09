@@ -1,9 +1,8 @@
-import { screen } from "@testing-library/react";
-import { render } from "@/test-utils";
+import { render, screen } from "@/test-utils";
 
 import Page from "./page";
 
-it("App Router: Works with dynamic route segments", () => {
+it("App Router: IndexPage", () => {
   render(<Page />);
   expect(screen.getByText("Upload File")).toBeInTheDocument();
   expect(screen.getByText("Create Blank Image")).toBeInTheDocument();
